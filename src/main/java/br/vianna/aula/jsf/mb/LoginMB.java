@@ -44,6 +44,10 @@ public class LoginMB implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index";
     }
+    
+    public String cadastro(){
+        return "cadastro?faces-redirect=true";
+    }
 
     public Boolean getLogged() {
         return logged;
