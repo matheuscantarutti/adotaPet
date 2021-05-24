@@ -20,14 +20,16 @@ public class LoginMB implements Serializable {
     private String nome;
     private String senha;
     private String erro;
+    private Boolean logged;
 
     public LoginMB() {
-        
+        logged = false;
         erro = "";
     }
     
     public String verificaSenha(){
         if(nome.equals("admin") && senha.equals("123")){
+            logged = true;
             return "index";
         } else{
             erro = "Credenciais inválidas!";
@@ -37,6 +39,15 @@ public class LoginMB implements Serializable {
         }
     }
 
+    public Boolean getLogged() {
+        return logged;
+    }
+
+    public void setLogged(Boolean logged) {
+        this.logged = logged;
+    }
+
+    
     public String getNome() {
         return nome;
     }
