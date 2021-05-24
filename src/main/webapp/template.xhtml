@@ -84,9 +84,11 @@
                         </li>
 
                         <li class="nav-item" >
-                            <a class="nav-link " href="control?ac=logout"> 
-                                <i class="oi oi-account-logout"></i> <span>Sair</span>
-                            </a>
+                            <h:form>
+                                <h:commandLink class="nav-link" action="#{loginMB.logout()}">
+                                    <i class="oi oi-account-logout"></i><span>Sair</span>
+                                </h:commandLink>
+                            </h:form>
                         </li>
 
                     </ul>

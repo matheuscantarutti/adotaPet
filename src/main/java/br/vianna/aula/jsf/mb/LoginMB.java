@@ -7,6 +7,7 @@ package br.vianna.aula.jsf.mb;
 
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -37,6 +38,11 @@ public class LoginMB implements Serializable {
             senha="";
             return "";
         }
+    }
+    
+    public String logout (){
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "index";
     }
 
     public Boolean getLogged() {

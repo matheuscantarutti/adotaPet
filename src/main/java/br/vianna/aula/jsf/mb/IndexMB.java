@@ -34,6 +34,7 @@ public class IndexMB implements Serializable {
         if(!loginMB.getLogged()){
           
             try {
+                loginMB.setErro("Acesso não autorizado!!");
                 FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
             } catch (IOException ex) {
                 
